@@ -1,0 +1,26 @@
+<div id="wrapper">
+  <h1>Note Scraper</h1>
+
+
+  <div id="articles">
+    <ul>
+      {{#each articles}}
+      <li>
+        <div>
+          <a href="{{link}}">{{title}}</a>
+          <form action="/remove/{{_id}}" method="GET">
+            <input type="submit" value="Delete" />
+          </form>
+
+          {{#each note}}
+          <ol>
+            <h5>{{title}}</h5>
+            <p>{{body}}</p>
+          </ol>
+          {{/each}}
+        </div>
+      </li>
+      {{/each}}
+    </ul>
+  </div>
+  <div id="notes"></div>
